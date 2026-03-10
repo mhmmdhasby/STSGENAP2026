@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>STSGENAP2026 - Program Koleksi</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<!-- Menu Navigasi -->
+	<div class="menu">
+		<button onclick="tampilkanHalaman('tugas')">Daftar Tugas</button>
+		<button onclick="tampilkanHalaman('stok')">Stok Gudang</button>
+		<button onclick="tampilkanHalaman('tabungan')">Buku Tabungan</button>
+	</div>
+	
+	<!-- Halaman Daftar Tugas -->
+<div id="tugas" class="halaman active">
+        <h2>Daftar Tugas Sederhana</h2>
+        <input type="text" id="inputTugas" placeholder="Masukkan nama tugas...">
+        <button class="aksi" onclick="tambahTugas()">Tambah Tugas</button>
+        <button class="aksi hapus" onclick="hapusTugasTerakhir()">Hapus Tugas Terakhir</button>
+        <button class="aksi reset" onclick="resetTugas()">Reset Semua Tugas</button>
+        
+        <div class="output">
+            <h4>Daftar Tugas:</h4>
+            <ul id="daftarTugas"></ul>
+            <p style="margin-top: 10px;"><strong>Total Tugas: </strong><span id="totalTugas">0</span></p>
+        </div>
+    </div>
+	
+	<!-- Halaman Stok Gudang -->
+	<div id="stok" class="halaman">
+		<h2>Stok Gudang Sederhana</h2>
+		<input type="text" id="namaBarang" placeholder="Masukan Nama Barang">
+		<input type="number" id="jumlahStok" placeholder="Jumlah Stok" min="1">
+		<button class="aksi" onclick="tambahStok()">Tambah Ke Gudang</button>
+		<button class="aksi hapus" onclick="hapusStokTerakhir()">Hapus Data Terakhir</button>
+		<button class="aksi reset" onclick="resetStok()">Kosongkan Gudang</button>
+		
+		<div class="output">
+			<h4>Data Stok Barang:</h4>
+			<table id="tabelStok">
+				<thead>
+					<tr>
+						<th>Nama Barang</th>
+						<th>Jumlah Stok</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<p style="margin-top: 10px;"><strong>Total Seluruh Stok: </strong><span id="totalStok">0</span></p>
+		</div>
+	</div>
+	
+	<!-- Halaman Buku Tabungan -->
+	<div id="tabungan" class="halaman">
+		<h2>Buku Tabungan Siswa</h2>
+		<input type="number" id="jumlahSetoran" placeholder="Masukan Nominal Setoran (Rp)" min="1000">
+		<button class="aksi" onclick="tambahSetoran()">Tambah Setoran</button>
+		<button class="aksi hapus" onclick="hapusSetoranTerakhir()">Hapus Setoran Terakhir</button>
+		<button class="aksi reset" onclick="resetTabungan()">Reset Buku Tabungan</button>
+		<button class="aksi" onclick="cetakSaldo()">Cetak Saldo Tabungan</button>
+		
+		<div class="output">
+			<h4>Riwayat Setoran:</h4>
+			<ul id="riwayatSetoran"></ul>
+			<div id="detailSaldo" style="margin-top: 10px; display: none;">
+				<p><strong>Total Saldo Sebelum Bonus: </strong><span id="totalSebelumBonus">0</span></p>
+				<p><strong>Bonus (7% jika ≥ Rp 1.000.000): </strong><span id="bonusTabungan">0</span></p>
+				<p><strong>Saldo Akhir: </strong><span id="saldoAkhir">0</span></p>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<script src="main.js"></script>
+</body>
+
+</html>
